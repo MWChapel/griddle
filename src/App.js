@@ -8,7 +8,6 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import React, { useEffect, useRef, useState } from 'react';
 import ReactDice from 'react-dice-complete';
-import 'react-dice-complete/dist/react-dice-complete.css';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import InfoIcon from '@mui/icons-material/Info';
 import BarChartIcon from '@mui/icons-material/BarChart';
@@ -25,12 +24,6 @@ import NorthIcon from '@mui/icons-material/North';
 import StarIcon from '@mui/icons-material/Star';
 import Typography from '@mui/material/Typography';
 import { createStyles, makeStyles } from '@mui/styles';
-
-import {
-  loadStatsFromLocalStorage,
-  saveStatsToLocalStorage,
-} from './lib/localStorage'
-import { North } from '@mui/icons-material';
 
 const useStyles = makeStyles((theme) =>
   createStyles({
