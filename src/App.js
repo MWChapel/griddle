@@ -9,7 +9,6 @@ import DialogTitle from '@mui/material/DialogTitle';
 import React, { useEffect, useRef, useState } from 'react';
 import ReactDice from 'react-dice-complete';
 import 'react-dice-complete/dist/react-dice-complete.css';
-import _ from 'lodash';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import InfoIcon from '@mui/icons-material/Info';
 import BarChartIcon from '@mui/icons-material/BarChart';
