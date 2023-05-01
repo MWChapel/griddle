@@ -285,7 +285,7 @@ const Game = ({ handleDarkMode }) => {
     }
     const selectClass = (item) => {
         const val = payload[item].value;
-        if(val == 2 || val == 12) {
+        if(parseInt(val) === 2 || parseInt(val) === 12) {
             return classes.doublerItem;
         }
         if(diagComplete(item)) {
