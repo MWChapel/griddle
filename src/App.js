@@ -148,10 +148,6 @@ const Game = ({ handleDarkMode }) => {
     const [hasSelected, setHasSelected]= useState(false);
     const [diceValues, setDiceValues] = useState({});
     const [payload, setPayload]= useState(emptyPayload);
-    const ALERT_TIME_MS = 2000;
-    const prefersDarkMode = window.matchMedia(
-        '(prefers-color-scheme: dark)'
-      ).matches
 
     const handleClose = () => {
         setOpen(false);
@@ -168,7 +164,6 @@ const Game = ({ handleDarkMode }) => {
     //Calculates the Rank of a 5 card Poker hand using bit manipulations.
     const rankPokerHand = (cs = []) => {
         const multiplier = cs.filter(val => val === 2 || val === 12)?.length + 1 || 0;
-
         if(cs.every( (val, i, arr) => val === arr[0] )) {
             return {
                 hand: '5 of a kind',
@@ -179,17 +174,10 @@ const Game = ({ handleDarkMode }) => {
         for (i=-1, v=o=0; i<5; i++, o=Math.pow(2,cs[i]*4)) {v += o*((v/o&15)+1);}
         v = v % 15 - ((s/(s&-s) === 31) || (s === 0x403c) ? 3 : 1);
         let hand = hands[v];
-        if(multiplier > 0) {
-            hand.score = hand.score * multiplier;
-        }
-        return hand;
-    }
-
-    const getScore = () => {
-        const score = scoreCol(1)?.score + scoreCol(2)?.score + scoreCol(3)?.score + scoreCol(4)?.score + scoreCol(5)?.score +
-        scoreRow(1)?.score + scoreRow(2)?.score + scoreRow(3)?.score + scoreRow(4)?.score + scoreRow(5)?.score +
-        scoreDiag(1)?.score + scoreDiag(2)?.score;
-        return score || 0;
+        return {
+            hand: hand.hand,
+            score: multiplier ? hand.score * multiplier : hand.score
+        };
     }
 
     // Rolls all the dice
@@ -227,6 +215,13 @@ const Game = ({ handleDarkMode }) => {
             return true;
         }
        return false;
+    }
+
+    const getScore = () => {
+        const score = scoreCol(1)?.score + scoreCol(2)?.score + scoreCol(3)?.score + scoreCol(4)?.score + scoreCol(5)?.score +
+        scoreRow(1)?.score + scoreRow(2)?.score + scoreRow(3)?.score + scoreRow(4)?.score + scoreRow(5)?.score +
+        scoreDiag(1)?.score + scoreDiag(2)?.score;
+        return score || 0;
     }
 
     const scoreDiag = (itemNum) => {
