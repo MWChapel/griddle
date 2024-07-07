@@ -1,10 +1,20 @@
-# Getting Started with Create React App
+# Griddle, a Dice Game designed by Richard Garfield
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Griddle is a light weight roll and write. The basic mechanics, filling a grid with cards and scoring the resulting poker hands, I have seen many times. I figure, in fact, there is a good chance this exact game has been made (though my scoring is likely different) - and I may have even seen it. If someone has a link to 'the same game with different scoring', please post it so I can credit accordingly.
 
-## Available Scripts
+Griddle
+Make a 5x5 grid. Roll 2D6, decide which square to fill with the number you roll. If multiple people are playing, they each have their own grid and use the same rolls.
 
-In the project directory, you can run:
+Scoring: After all 25 squares are filled each row, column, and the 2 main diagonals are scored using the following:
+Pair: 1
+2 Pair: 2
+3 Kind: 3
+Straight (all 5): 4
+Full House: 5
+4 Kind: 6
+5 Kind: 10
+
+2's and 12's are boosters, Enter them with a circle around them. They still count toward the above hands like normal, but, the rows/columns/diagonals they are in are multiplied by 2/3/4/5/6 for having 1/2/3/4/5 boosters. In other words, each one increases the multiplier by one.
 
 ### `npm start`
 
@@ -14,57 +24,3 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
